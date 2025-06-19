@@ -1,12 +1,26 @@
 import express from "express";
 import bodyParser from "body-parser";
-import routes from "./routes/handler.js/";
 
 const app = express();
 const PORT = 4000;
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.use("/",routes);
+
+app.get("/",(req,res)=>{
+    res.render("index.ejs")
+})
+
+app.post("/search",(req,res)=>{
+    console.log("Searched");
+    const data = req.body["searchbar"];
+    res.send(data)
+})
+
+app.get("/search",(req,res)=>{
+    console.log("Searched")
+    const data = req.body.searchbar;
+    res.send(data)
+})
 
 
 app.listen(PORT,(req,res)=>{

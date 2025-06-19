@@ -7,6 +7,16 @@
     <title>MUSIC Player</title>
 </head>
 <body>
-    <input class = "searchBar" type="text" placeholder="Search for Your Song" name="search-bar">
+    <div>
+        <button>Home</button>
+        <button>Player</button>
+    </div>
+    <div>
+        <form action="/search" method="post">
+            <input class="searchBar" type="text" name="searchbar" placeholder="Search for Your Song" value = "">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
 </body>
 </html>
