@@ -7,15 +7,20 @@
     <title>MUSIC Player</title>
 </head>
 <body>
-    <div>
-        <button>Home</button>
-        <button>Player</button>
+    <div class="nav-bar">
+        <button class="nav-bar-buttons">Home</button>
+        <button class = "nav-bar-buttons">Player</button>
     </div>
-    <div>
+    <div class = "search-bar">
         <form action="/search" method="post">
             <input class="searchBar" type="text" name="searchbar" placeholder="Search for Your Song" value = "">
-            <button type="submit">Search</button>
+            <button class = "search-button" type="submit">
+                <img src="../public/statics/icons8-search-64.png" alt="">
+            </button>
         </form>
+    </div>
+    <div class="player">
+
     </div>
 
 </body>
