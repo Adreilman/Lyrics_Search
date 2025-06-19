@@ -1,6 +1,12 @@
 body{
     text-align: center;
-    background-image: url('./abstract-luxury-soft-red-background-christmas-valentines-layout-designstudioroom-web-template-busine.jpg')
+    background-image: url('./abstract-luxury-soft-red-background-christmas-valentines-layout-designstudioroom-web-template-busine.jpg');
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.search-bar{
+    margin: 3rem;
 }
 .searchBar{
     width: 21rem;
@@ -39,4 +45,12 @@ body{
 }
 .search-bar form input:hover{
     border-color: beige;
+}
+.controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.controls_form img{
+    height: 2rem;
 }
