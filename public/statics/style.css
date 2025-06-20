@@ -7,6 +7,10 @@ body{
 }
 .search-bar{
     margin: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .searchBar{
     width: 21rem;
@@ -34,10 +38,10 @@ body{
 .search-bar form{
     display:inline-flex;
     justify-content: center; 
+    flex-direction: column;
 }
 .search-button{
-    background:none;
-    border: none;
+    width: 4rem;
 }
 .search-button img{
     height: 2rem;

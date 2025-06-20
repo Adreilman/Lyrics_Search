@@ -12,14 +12,23 @@ app.get("/",(req,res)=>{
 
 app.post("/search",(req,res)=>{
     console.log("Searched");
-    const data = req.body["searchbar"];
-    res.send(data)
-})
-
-app.get("/search",(req,res)=>{
-    console.log("Searched")
-    const data = req.body.searchbar;
-    res.send(data)
+    const artist = req.body["artistsearch"]
+    const title = req.body["titlesearch"]
+    
+    const fetchLyrics = async (artist,title) => {
+    const response = await fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`);
+    if (!response.ok) {
+        throw new Error('Lyrics not found');
+    }
+    const data = await response.json();
+    console.log(data.lyrics);
+    const lyrics = data.lyrics;
+    res.render("index.ejs",{
+      lyrics: lyrics
+    })
+};
+// Example usage
+fetchLyrics(artist,title).catch(console.error);
 })
 
 

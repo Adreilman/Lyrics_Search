@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/statics/style.css">
-    <title>MUSIC Player</title>
+    <link rel="stylesheet" href="statics/style.css">
+    <title>Get Lyrics</title>
 </head>
 <body>
     <div class="nav-bar">
@@ -13,26 +13,17 @@
     </div>
     <div class = "search-bar">
         <form action="/search" method="post">
-            <input class="searchBar" type="text" name="searchbar" placeholder="Search for Your Song" value = "">
-            <button class = "search-button" type="submit">
-                <img src="../public/statics/icons8-search-64.png" alt="">
-            </button>
+            <input class="searchBar" type="text" name="artistsearch" placeholder="Search for The Artist" value = "">
+            <input class="searchBar" type="text" name="titlesearch" placeholder="Search for The title" value = "">
         </form>
+        <button class = "search-button">Search</button>
     </div>
-    <div class="player">
-        <img src="../public/statics/OIP__1_-removebg-preview.png" alt="">
-        <div class="controls">
-            <form class = "controls_form"action="/previous" method="post">
-                <button class="previous"><img src="../public/statics/previoustrack_113650.png" alt="previous"></button>
-            </form>
-            <form class = "controls_form"action="/pause" method="post">
-                <button class="pause"><img src="../public/statics/pausebutton_83718.png" alt="pause"></button>
-            </form>
-            <form class = "controls_form"action="/next" method="post">
-                <button class="next"><img src="../public/statics/nexttrackbutton_113555.png" alt="previous"></button>
-            </form>
+     <% if (locals.lyrics) { %>
+        <div class="lyrics">
+            <p><%= lyrics %></p>
         </div>
-    </div>
+    <% } %>
+    
 
 </body>
 </html>
