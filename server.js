@@ -23,6 +23,7 @@ app.post("/search",(req,res)=>{
     const data = await response.json();
     console.log(data.lyrics);
     const lyrics = data.lyrics;
+    console.log(lyrics);
     res.render("index.ejs",{
       lyrics: lyrics
     })
