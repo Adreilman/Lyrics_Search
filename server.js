@@ -21,11 +21,11 @@ app.post("/search",(req,res)=>{
         throw new Error('Lyrics not found');
     }
     const data = await response.json();
-    console.log(data.lyrics);
     const lyrics = data.lyrics;
-    console.log(lyrics);
+    const arr_lyrics = lyrics.split(/(?<![A-Z])(?=[A-Z])/);
+    console.log(arr_lyrics);
     res.render("index.ejs",{
-      lyrics: lyrics
+      array_lyrics: arr_lyrics
     })
 };
 // Example usage

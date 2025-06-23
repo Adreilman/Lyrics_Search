@@ -7,10 +7,6 @@
     <title>Get Lyrics</title>
 </head>
 <body>
-    <div class="nav-bar">
-        <button class="nav-bar-buttons">Home</button>
-        <button class = "nav-bar-buttons">Player</button>
-    </div>
     <div class = "search-bar">
         <form action="/search" method="post">
             <input class="searchBar" type="text" name="artistsearch" placeholder="Search for The Artist" value = "">
@@ -18,9 +14,11 @@
             <button class = "search-button">Search</button>
         </form>
     </div>
-     <% if (locals.lyrics) { %>
+     <% if (locals.array_lyrics) { %>
         <div class="lyrics">
-            <p><%= lyrics %></p>
+            <% array_lyrics.forEach(element => { %>
+             <p><%= element %></p>
+            <% }) %>
         </div>
     <% } %>
     
